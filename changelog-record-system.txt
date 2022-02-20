@@ -18,6 +18,7 @@ You can search for the following categories using whatever search feature your t
 then type '@' followed by the following arguments:
 
 ? @:
+    -   search                             ! Locate this section
     -   author                             ! Locate the author(s) of the document
     -   document                           ! Locate the document type/header of the document
     -   document-created                   ! Locate the date the document was created on
@@ -31,11 +32,13 @@ then type '@' followed by the following arguments:
 This should locate the specified text and bring you to the spot it is located in within the document. If you're viewing this on
 a browser, you can do CTRL+F and enter the search key.
 
+==================================================================================================================================
+
 
 ? @changelog-info
-----------------------
-== About Change Log ==
-----------------------
+====================
+| ABOUT CHANGE LOG |
+==================================================================================================================================
 
 This change log document was developed in order to for me to keep track of changes and updates made to my code within a separate,
 accessible document for possible future reference. Whenever a note-worthy change is made to a line or section of code, a
@@ -113,6 +116,11 @@ Each individual change record will be kept in a tab sorted by the date it was cr
     OTHER:
         - general change #1
         - general change #2
+
+    TODO: 
+        - do this
+        - and that
+
 ----------------------------------------------------------------------------------------------------------------------------------
 
 This is a change log tab created on xx/xx/xxxx with two record entries:
@@ -129,6 +137,9 @@ The first entry has two versions:
 Below each of these identifiers contains addition information about the change that was made to the code and why. If you want to
 locate a specific change within the document, search for @changelog-record:#change[identifier] where the identifier is
 the change id and the version number.
+
+There is also an "OTHER:" and "TODO:" category at the end of the tab. This is to record any addition changes made that were 
+not worthy of creating a searchable change record for, and if there are any "todo" notes that should be saved.
 
 
 @changelog-records
