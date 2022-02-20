@@ -23,7 +23,7 @@ then type '@' followed by the following arguments:
     -   document                           ! Locate the document type/header of the document
     -   document-created                   ! Locate the date the document was created on
     -   document-modified                  ! Locate the date the document was last modified on
-    -   document-version                   ! Locate the version number of the document according to the author
+    -   document-version                   ! Locate the version number of the document according to the author(s)
     -   changelog-info                     ! Locate information on how the change log record system works
     -   changelog-records                  ! Locate the change log records
     -   changelog-record:#change[...]      ! Locate a specific change log record with a given identifier [id.version]
