@@ -45,29 +45,29 @@ accessible document for possible future reference. Whenever a note-worthy change
 "change record" can be written next to the modified area via a comment. The comment will look something like this:
 
 
-    comment ->  #change-record[id.version]-"short description about change"
+    comment ->  @changelog-record:#change-record[id.version]-"short description about change"
 
 
 If the modified code only affects a single line, you may see a change record comment like this:
 
 
-    comment ->  #change-record[id.version]-"short description about change" // BEGIN-END \\
+    comment ->  @changelog-record:#change-record[id.version]-"short description about change" // BEGIN-END \\
                 [... line of affected code ...]
 
 
 Or like this:
 
 
-    [... line of affected code ...]  comment -> #change-record[id.version]-"short description about change" // BEGIN-END \\
+    [... line of affected code ...]  comment -> @changelog-record:#change-record[id.version]-"short description about change" // BEGIN-END \\
 
 
 If the modified code affects multiple lines in the program, then that region should be wrapped within an open-close change record
 comment. Such a case should look like this:
 
 
-    comment ->  #change-record[id.version]-"short description about change" // BEGIN //
+    comment ->  @changelog-record:#change-record[id.version]-"short description about change" // BEGIN //
                 [[... multiple lines of affected mode ...]]
-    comment ->  #change-record[id.version]-"short description about change" \\ END \\
+    comment ->  @changelog-record:#change-record[id.version]-"short description about change" \\ END \\
 
 
 The use case above will likely be the most common use case. When a change record is first written, its identifier is
@@ -77,15 +77,15 @@ if you modify some code in the same spot multiple times, the change id will rema
 increase. Example:
 
 
-    comment ->  #change-record[1.0]-"changed something here" // BEGIN //
+    comment ->  @changelog-record:#change-record[1.0]-"changed something here" // BEGIN //
                 [[... changed some code here ...]]
-    comment ->  #change-record[1.0]-"changed something here" \\ END \\ 
+    comment ->  @changelog-record:#change-record[1.0]-"changed something here" \\ END \\ 
 
     ... later on to the same code ...
 
-    comment ->  #change-record[1.1]-"updated change" // BEGIN //
+    comment ->  @changelog-record:#change-record[1.1]-"updated change" // BEGIN //
                 [[... changed some code here AGAIN ...]]
-    comment ->  #change-record[1.1]-"updated change" \\ END \\ 
+    comment ->  @changelog-record:#change-record[1.1]-"updated change" \\ END \\ 
 
 The initial change record had an identifier of [1.0], but after another change was made within the same record its version was
 updated and the new identifier is [1.1]. In the actual change records log kept below, initial change records are organized by
