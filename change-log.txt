@@ -24,7 +24,7 @@ then type '@' followed by the following arguments:
     -   document-modified                  ! Locate the date the document was last modified on
     -   document-version                   ! Locate the version number of the document according to the author
     -   changelog-info                     ! Locate information on how the change log record system works
-    -   changelog-record                   ! Locate the change log record 
+    -   changelog-records                  ! Locate the change log records
     -   changelog-record:#change[...]      ! Locate a specific change log record with a given identifier [id.version]
     -   changelog-date:xx/xx/xxxx          ! Locate a change log tab created on a specific date
 
@@ -131,7 +131,7 @@ locate a specific change within the document, search for @changelog-record:#chan
 the change id and the version number.
 
 
-@changelog-record
+@changelog-records
 ======================
 | CHANGE LOG RECORDS |
 ==================================================================================================================================
