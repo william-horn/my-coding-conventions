@@ -1,0 +1,105 @@
+============================
+| CHANGE LOG - Version 2.1 |
+==================================================================================================================================
+
+? @author:                 William J. Horn
+? @document:               change-log.txt
+? @document-birth:         2/19/2022
+? @document-modified:      2/19/2022
+? @document-version:       2.1
+
+? @change-log-info
+----------------------
+== About Change Log ==
+----------------------
+
+This change log document was developed in order to for me to keep track of changes and updates made to my code within a separate,
+accessible document for possible future reference. Whenever a note-worthy change is made to a line or section of code, a
+"change record" can be written next to the modified area via a comment. The comment will look something like this:
+
+
+    comment ->  #change-record:[id.version]-"short description about change"
+
+
+If the modified code only affects a single line, you may see a change record comment like this:
+
+
+    comment ->  #change-record:[id.version]-"short description about change" // BEGIN-END \\
+                [... line of affected code ...]
+
+
+Or like this:
+
+
+    [... line of affected code ...]  comment -> #change-record:[id.version]-"short description about change" // BEGIN-END \\
+
+
+If the modified code affects multiple lines in the program, then that region should be wrapped within an open-close change record
+comment. Such a case should look like this:
+
+
+    comment ->  #change-record:[id.version]-"short description about change" // BEGIN //
+                [[... multiple lines of affected mode ...]]
+    comment ->  #change-record:[id.version]-"short description about change" \\ END \\
+
+
+The use case above will likely be the most common use case. When a change record is first written, its identifier is
+located within the square brackets [id.version]. The first number in this identifier is the unique id of the change. This
+is a sequential, hexadecimal number following the previous change id. The second number is the version of the change. For example,
+if you modify some code in the same spot multiple times, the change id will remain the same but the change version number will 
+increase. Example:
+
+
+    comment ->  #change-record:[1.0]-"changed something here" // BEGIN //
+                [[... changed some code here ...]]
+    comment ->  #change-record:[1.0]-"changed something here" \\ END \\ 
+
+    ... later on to the same code ...
+
+    comment ->  #change-record:[1.1]-"updated change" // BEGIN //
+                [[... changed some code here AGAIN ...]]
+    comment ->  #change-record:[1.1]-"updated change" \\ END \\ 
+
+The initial change record had an identifier of [1.0], but after another change was made within the same record its version was
+updated and the new identifier is [1.1]. In the actual change records log kept below, initial change records are organized by
+date. However, if an initial change record is added on day X and a version update is made to that same record on day Y, the new
+date of that version is not recorded. Only the initial creation of the change record is recorded. This is to keep a nice linear
+flow to the search history of change records, and change version dates are not deemed significant.
+
+@changelog-record
+======================
+| CHANGE LOG RECORDS |
+==================================================================================================================================
+
+----------------------------------------------------------------------------------------------------------------------------------
+                                                                                                   | @changelog-date: xx/xx/xxxx |
+                                                                                                   -------------------------------
+
+@changelog-record:#change:[id.version]
+    [1.0]-"changed how something worked"
+
+        -   this is how
+        -   this is also how
+
+    [1.1]-"now it's different"
+
+        -   different how
+
+@changelog-record:#change:[2.0]
+
+    [3.0]-"changed how something worked"
+
+        -   this is how
+
+
+----------------------------------------------------------------------------------------------------------------------------------
+                                                                                                   | @changelog-date: xx/xx/xxxx |
+                                                                                                   -------------------------------
+
+
+
+
+
+
+
+
