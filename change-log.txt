@@ -4,11 +4,35 @@
 
 ? @author:                 William J. Horn
 ? @document:               change-log.txt
-? @document-birth:         2/19/2022
+? @document-created:       2/19/2022
 ? @document-modified:      2/19/2022
 ? @document-version:       2.1
 
-? @change-log-info
+
+? @search
+-----------------
+== Search Keys ==
+-----------------
+
+You can search for the following categories using whatever search feature your text editor provides. First open the search utility,
+then type '@' followed by the following arguments:
+
+? @:
+    -   author                             ! Locate the author(s) of the document
+    -   document                           ! Locate the document type/header of the document
+    -   document-created                   ! Locate the date the document was created on
+    -   document-modified                  ! Locate the date the document was last modified on
+    -   document-version                   ! Locate the version number of the document according to the author
+    -   changelog-info                     ! Locate information on how the change log record system works
+    -   changelog-record                   ! Locate the change log record 
+    -   changelog-record:#change[...]      ! Locate a specific change log record with a given identifier [id.version]
+    -   changelog-date:xx/xx/xxxx          ! Locate a change log tab created on a specific date
+
+This should locate the specified text and bring you to the spot it is located in within the document. If you're viewing this on
+a browser, you can do CTRL+F and enter the search key.
+
+
+? @changelog-info
 ----------------------
 == About Change Log ==
 ----------------------
@@ -66,40 +90,55 @@ date. However, if an initial change record is added on day X and a version updat
 date of that version is not recorded. Only the initial creation of the change record is recorded. This is to keep a nice linear
 flow to the search history of change records, and change version dates are not deemed significant.
 
+Each individual change record will be kept in a tab sorted by the date it was created on. The tab looks like this:
+
+----------------------------------------------------------------------------------------------------------------------------------
+                                                                                                    | @changelog-date:xx/xx/xxxx |
+                                                                                                    ------------------------------
+    @changelog-record:#change:[id.current-version]
+        [id.(version - 1)]-"old change version"
+
+            -   some change made a while ago
+
+        [id.current-version]-"new change made"
+
+            -   current change is now this
+
+    @changelog-record:#change:[(id + 1).current-version]
+
+        [(id + 1).current-version]-"changed how something worked"
+
+            -   this is the current and only version of this change made 
+
+    OTHER:
+        - general change #1
+        - general change #2
+----------------------------------------------------------------------------------------------------------------------------------
+
+This is a change log tab created on xx/xx/xxxx with two record entries:
+
+    @changelog-record:#change:[id.current-version]
+    @changelog-record:#change:[(id + 1).current-version]
+
+The first entry has two versions:
+
+    @changelog-record:#change:[id.current-version]
+        [id.(version - 1)]-"old change version"
+        [id.current-version]-"new change made"
+
+Below each of these identifiers contains addition information about the change that was made to the code and why. If you want to
+locate a specific change within the document, search for @changelog-record:#change[identifier] where the identifier is
+the change id and the version number.
+
+
 @changelog-record
 ======================
 | CHANGE LOG RECORDS |
 ==================================================================================================================================
 
 ----------------------------------------------------------------------------------------------------------------------------------
-                                                                                                   | @changelog-date: xx/xx/xxxx |
-                                                                                                   -------------------------------
-
-@changelog-record:#change:[id.version]
-    [1.0]-"changed how something worked"
-
-        -   this is how
-        -   this is also how
-
-    [1.1]-"now it's different"
-
-        -   different how
-
-@changelog-record:#change:[2.0]
-
-    [3.0]-"changed how something worked"
-
-        -   this is how
-
-
-----------------------------------------------------------------------------------------------------------------------------------
-                                                                                                   | @changelog-date: xx/xx/xxxx |
-                                                                                                   -------------------------------
-
-
-
-
-
-
+                                                                                                    | @changelog-date:xx/xx/xxxx |
+                                                                                                    ------------------------------
+No records
 
 
