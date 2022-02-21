@@ -101,17 +101,17 @@ Each individual change record will be kept in a tab sorted by the date it was cr
     @changelog-record:#change[id.current-version]
         [id.(version - 1)]-"old change version"
 
-            -   some change made a while ago
+            *   some change made a while ago
 
         [id.current-version]-"new change made"
 
-            -   current change is now this
+            *   current change is now this
 
     @changelog-record:#change[(id + 1).current-version]
 
         [(id + 1).current-version]-"changed how something worked"
 
-            -   this is the current and only version of this change made 
+            *   this is the current and only version of this change made 
 
     OTHER:
         - general change #1
@@ -140,16 +140,4 @@ the change id and the version number.
 
 There is also an "OTHER:" and "TODO:" category at the end of the tab. This is to record any addition changes made that were 
 not worthy of creating a searchable change record for, and if there are any "todo" notes that should be saved.
-
-
-@changelog-records
-======================
-| CHANGE LOG RECORDS |
-==================================================================================================================================
-
-----------------------------------------------------------------------------------------------------------------------------------
-                                                                                                    | @changelog-date:xx/xx/xxxx |
-                                                                                                    ------------------------------
-No records
-
 
