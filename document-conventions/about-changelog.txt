@@ -50,7 +50,7 @@ Once the files are established you can start making change records. As mentioned
 to the changelog files. However, they follow a specific format. They are instantiated by writing:
 
 
-    @changelog-record:change[<id>]
+    @changelog-record:log[<id>]
         [version 1]
             -   some description about the change here
 
@@ -58,7 +58,7 @@ to the changelog files. However, they follow a specific format. They are instant
 Here is the above example broken down:
 
 
-    '@changelog-record:change'  - an anchor tag that let's us know we're creating a new change record 
+    '@changelog-record:log'     - an anchor tag that let's us know we're creating a new change record 
     '<id>'                      - a numeric value that represents the sequential number of change records 
     '[version 1]'               - sometimes you make a change to a change, and it's not worth thinking about it in a different 
                                   context. in cases like these, you can create a new version of the change listed below the
@@ -69,7 +69,7 @@ All change records should have a '[version 1]' when created, even if it is the o
 how some change records might look within the context of a project:
 
 
-    @changelog-record:change[1]
+    @changelog-record:log[1]
         [version 1]
             -   changed header of website from X to Y 
             -   updated color scheme
@@ -77,7 +77,7 @@ how some change records might look within the context of a project:
         [version 2]
             -   reverted to old color scheme
 
-    @changelog-record:change[2]
+    @changelog-record:log[2]
         [version 1]
             -   changed footer of website from X to Y
 
@@ -88,7 +88,7 @@ looks something like this:
 ----------------------------------------------------------------------------------------------------------------------------------
                                                                                                     | @changelog-date:xx/xx/xxxx |
                                                                                                     ------------------------------
-    @changelog-record:change[id]
+    @changelog-record:log[id]
         [version 1]
             -   did this
             -   did that 
@@ -122,38 +122,20 @@ the main program file. However, you may also write these change record comments 
 affects a block of code that you want to track. This is optional, but encouraged when refactoring your own code or working with
 other developers.
 
-Instead of copying and pasting the change record from the changelog file over to the program file (which would just defeat
-the purpose of all of this), there is a special variation of the '@changelog-record:change[<id>]' anchor which is:
-
-
-    @changelog-record:change[<id>]:start
-
-
-This anchor tag is specifically designed for being used within your program file to leave as a comment near the affected area 
-of code. For example, consider the follow block of code below (this would be in one of your program files):
+You can do this by simply adding a closing anchor tag denoted by `@changelog-record:end[<id>]` to end the change record block 
+whenever you need to. For example:
 
 
     var x = 0
 
-    while (x < 10) {
-        x++;
-    }
-
-
-Now let's say you want to record and track changes for some region of that code. You could do so by wrapping the affected
-code within the change record comment:
-
-
-    var x = 0
-
-    /* @changelog-record:change[1]:start */
+    /* @changelog-record:start[1] */
     while (x < 10) {
         x+=2;
     }
-    /* @changelog-record:end */
+    /* @changelog-record:end[1] */
 
 
-'@changelog-record:end' is where you stop tracking the change record. There are two added benefits to 
+'@changelog-record:end[1]' is where you stop tracking the change record. There are two added benefits to 
 doing this:
 
 
@@ -164,7 +146,7 @@ doing this:
         immediately to your changelog file.
         
 
-If no end anchor tag is given, you can simply leave the comment as `@changelog-record:change[<id>]:start` and 
+If no end anchor tag is given, you can simply leave the comment as `@changelog-record:start[id]` and 
 treat it as an inline anchor tag reference. Usually you may want to do this if you're only changing one line of code, but
 block anchors are still recommended.
 

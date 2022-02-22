@@ -50,8 +50,6 @@ The typical search tags are as follows, but depending on the purpose of the docu
 
 -- inline anchors --
 
-@anchor-help                            ! Locate the local 'anchor help' document within the project (document may be outdated but will
--                                         provide a link to the updated version)
 @author                                 ! Locate author(s) of the document
 @document-start                         ! Locate the top of the document
 @document-end                           ! Locate the bottom of the document
@@ -63,8 +61,8 @@ The typical search tags are as follows, but depending on the purpose of the docu
 @document-api                           ! Locate the API if the document is a library
 @document-changelog                     ! Locate information about the changelog
 @document-todo                          ! Locate the document to-do list
-@document-main                          ! Points to the main function of the document
-@document-metadata                      ! Points to the metadata (or initial setup phase) of the document
+@program-init                           ! Locate beginning of the initial setup phase of the program
+@program-main                           ! Locate where the main body of your program begins
 @marker:"comment"                       ! Points to any arbitrary marker spot in a document
 @<file-type>:"comment"                  ! (Similar to @marker) Points to a marker specific to a given file type. (ex. @html:"something") 
 @changelog-date:xx/xx/xxxx              ! Points to a specific change log tab for a given date
@@ -72,8 +70,9 @@ The typical search tags are as follows, but depending on the purpose of the docu
 
 -- block anchors --
 
-@changelog-record:change[id]:start      ! Target all change record code blocks within a program file
-@changelog-record:end                   ! Target all ending instances of a change record block within a program file
+@changelog-record:log[i]                ! Target specifically change logs within the changelog file
+@changelog-record:start[id]             ! Target all starting change record code blocks within a program file
+@changelog-record:end[id]               ! Target all ending instances of a change record block within a program file
 @debug-on:start:"comment"               ! Points to an active debug feature in the program file 
 @debug-off:start:"comment"              ! Points to an inactive debug feature in the program file
 @debug-on:end                           ! Points to ending instance of an active debug block
