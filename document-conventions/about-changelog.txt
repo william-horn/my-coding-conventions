@@ -1,0 +1,121 @@
+? @document-start
+============================
+| CHANGE LOG - Version 2.1 |
+==================================================================================================================================
+
+? @author:                 William J. Horn
+? @document-name:          about-changelog.txt
+? @document-created:       02/19/2022
+? @document-modified:      02/19/2022
+? @document-version:       2.1
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+! This is the central updated version
+
+? @document-about
+====================
+| ABOUT CHANGE LOG |
+==================================================================================================================================
+
+-- What Is This? --
+
+This change log system was developed to help keep track of changes made to a program file whether for independent work
+or for collaborative work. The goal was to reduce comment clutter in a program file while still keeping a descriptive log 
+of changes made TO that program file stored away in a different file. 
+
+
+-- How Do I Use This? --
+
+Recording a change made to a document (using this system) is done by creating a "change record". A change record is a plain-text
+entry within the local changelog file. Each directory containing program files that wish to keep a changelog will have a 
+folder called "changelog" inside of it. Inside this folder are text files that are named after the program file it is tracking. 
+So, if a program file is named "index.html", then its changelog file will be named "changelog_index(html).txt" which is inside 
+of the changelog folder. The hierarchy will look something like this:
+
+
+    <Program File Directory>
+        |
+        |__program-file.html 
+        |
+        |__changelog
+            |
+            |__changelog_program-file(html).txt
+
+
+There will only be one changelog folder per directory. Tracking another program file does not require creating another changelog 
+folder.
+
+Once the files are established you can start making change records. As mentioned before, change records are just text entries
+to the changelog files. However, they follow a specific format. They are instantiated by writing:
+
+
+    @changelog-record:change[<id>]
+        [version 1]
+            -   some description about the change here
+
+
+Here is the above example broken down:
+
+
+    '@changelog-record:change'  - an anchor tag that let's us know we're creating a new change record 
+    '<id>'                      - a numeric value that represents the sequential number of change records 
+    '[version 1]'               - sometimes you make a change to a change, and it's not worth thinking about it in a different 
+                                  context. in cases like these, you can create a new version of the change listed below the
+                                  change record.
+
+
+All change records should have a '[version 1]' when created, even if it is the only version of that change. Here is an example of
+how some change records might look within the context of a project:
+
+
+    @changelog-record:change[1]
+        [version 1]
+            -   changed header of website from X to Y 
+            -   updated color scheme
+
+        [version 2]
+            -   reverted to old color scheme
+
+    @changelog-record:change[2]
+        [version 1]
+            -   changed footer of website from X to Y
+
+
+All change records are grouped and sorted by date. The date is displayed at the far right of the delimiter lines, and looks
+something like this:
+
+----------------------------------------------------------------------------------------------------------------------------------
+                                                                                                    | @changelog-date:xx/xx/xxxx |
+                                                                                                    ------------------------------
+    @changelog-record:change[id]
+        [version 1]
+            -   did this
+            -   did that 
+
+        [version 2]
+            -   did that  
+            -   did this
+
+
+(*optional) OTHER:
+                - general change #1
+                - general change #2
+
+(*optional) TODO:
+                - do this
+                - and that
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+
+Notice that the date is prefixed with the anchor tag '@changelog-date:`, this means you can also search for groups of change
+records by date. You will also notice there is an 'OTHER:' and 'TODO:' list below the change records. These lists are optional 
+and should not be visible by default. They exist to write down a change you made that isn't worth creating a change record for,
+but you would like to remember it anyway. Think of "OTHER" and "TODO" as sticky notes.
+
+
+-- 
+
+
+? @document-end
