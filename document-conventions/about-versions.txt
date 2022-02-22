@@ -13,6 +13,11 @@
 
 ! This is the central updated version
 
+? @document-about
+=====================================
+| What do The Version Numbers Mean? |
+==================================================================================================================================
+
 There are two types of version numbers. One for program files (formatted as v.0.0.0.0) and one for non-program files
 (formatted as v.0.0).
 
@@ -32,4 +37,5 @@ For non-program files:
 
 ----------------------------------------------------------------------------------------------------------------------------------
 
+~Will
 ? @document-end

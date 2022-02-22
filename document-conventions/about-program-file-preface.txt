@@ -4,7 +4,7 @@
 ==================================================================================================================================
 
 ? @author:                 William J. Horn
-? @document-name:          about-program-document-preface.txt
+? @document-name:          about-program-file-preface.txt
 ? @document-created:       02/22/2022
 ? @document-modified:      02/22/2022
 ? @document-version:       1.0
@@ -13,18 +13,19 @@
 
 ! This is the central updated version
 
+? @document-about
 =====================================
-| What is the Program File Preface? |
+| What is The Program File Preface? |
 ==================================================================================================================================
 
-The program file preface (PFP) is a comment block at the beginning of every program file that provides significant information
+The Program File Preface (PFP) is a comment block at the beginning of every program file that provides significant information
 about said file. All program files, along with those that are not mine but have been refactored or modified by me and do
 NOT already contain a PFP, will include the PFP referenced below. The preface includes the following information headers:
 
     (*) = optional
 
 
-    DOCUMENT HEADER:            summary of the document/project name
+    DOCUMENT HEADER:            summary of the project/file name and includes extra file information such as date, author(s), etc.
 
     ABOUT DOCUMENT:             verbose description about the document (usually where resources, credits, bugs, bug fixes, and other 
                                 miscellaneous information goes)
@@ -101,5 +102,5 @@ comment-begin -->
 <-- comment-end
 
 
-
+~Will
 ? @document-end

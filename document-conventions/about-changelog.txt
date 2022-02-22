@@ -1,6 +1,6 @@
 ? @document-start
-============================
-| CHANGE LOG - Version 2.1 |
+=====================
+| CHANGE LOG SYSTEM |
 ==================================================================================================================================
 
 ? @author:                 William J. Horn
@@ -28,7 +28,7 @@ of changes made TO that program file stored away in a different file.
 -- How Do I Use This? --
 
 Recording a change made to a document (using this system) is done by creating a "change record". A change record is a plain-text
-entry within the local changelog file. Each directory containing program files that wish to keep a changelog will have a 
+entry within the local changelog file. Each directory containing a program file that wishes to keep a changelog will have a 
 folder called "changelog" inside of it. Inside this folder are text files that are named after the program file it is tracking. 
 So, if a program file is named "index.html", then its changelog file will be named "changelog_index(html).txt" which is inside 
 of the changelog folder. The hierarchy will look something like this:
@@ -82,8 +82,8 @@ how some change records might look within the context of a project:
             -   changed footer of website from X to Y
 
 
-All change records are grouped and sorted by date. The date is displayed at the far right of the delimiter lines, and looks
-something like this:
+All of these change records are grouped and sorted by date. The date is displayed at the far right of the delimiter lines, and 
+looks something like this:
 
 ----------------------------------------------------------------------------------------------------------------------------------
                                                                                                     | @changelog-date:xx/xx/xxxx |
@@ -115,7 +115,60 @@ and should not be visible by default. They exist to write down a change you made
 but you would like to remember it anyway. Think of "OTHER" and "TODO" as sticky notes.
 
 
--- 
+-- Using Change Records in Your Program File --
+
+All of the information above is just for creating a change record directly in the changelog folder, completely hidden away from 
+the main program file. However, you may also write these change record comments within your program file if the change you made 
+affects a block of code that you want to track. This is optional, but encouraged when refactoring your own code or working with
+other developers.
+
+Instead of copying and pasting the change record from the changelog file over to the program file (which would just defeat
+the purpose of all of this), there is a special variation of the '@changelog-record:change[<id>]' anchor which is:
 
 
+    @changelog-record:change[<id>]:start
+
+
+This anchor tag is specifically designed for being used within your program file to leave as a comment near the affected area 
+of code. For example, consider the follow block of code below (this would be in one of your program files):
+
+
+    var x = 0
+
+    while (x < 10) {
+        x++;
+    }
+
+
+Now let's say you want to record and track changes for some region of that code. You could do so by wrapping the affected
+code within the change record comment:
+
+
+    var x = 0
+
+    /* @changelog-record:change[1]:start */
+    while (x < 10) {
+        x+=2;
+    }
+    /* @changelog-record:end */
+
+
+'@changelog-record:end' is where you stop tracking the change record. There are two added benefits to 
+doing this:
+
+
+    1.  Searching for change records with your text editor's search function will now also show you where in the program 
+        file the change was made, in addition to locating the information about the change in the changelog file.
+    
+    2.  While you're in your program file you will be able to see what code you changed without needing to switch
+        immediately to your changelog file.
+        
+
+If no end anchor tag is given, you can simply leave the comment as `@changelog-record:change[<id>]:start` and 
+treat it as an inline anchor tag reference. Usually you may want to do this if you're only changing one line of code, but
+block anchors are still recommended.
+
+That's all for now!
+
+~Will
 ? @document-end
