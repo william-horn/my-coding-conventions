@@ -88,6 +88,10 @@ comment-begin -->
 
         -   changes made
 
+    * If this program supports changelog records then there should be a 'changelog' folder within the same directory as this program
+    file. Learn more about the changelog system here: 
+    https://github.com/william-horn/my-coding-conventions/blob/main/document-conventions/about-changelog.txt
+
     ----------------------------------------------------------------------------------------------------------------------------------
 
     ? @document-todo
