@@ -27,22 +27,8 @@ text editor's search function also allows you to search across multiple files, s
 quickly list all possible points of interest when searching for an anchor tag.
 
 There are two types of anchors: inline anchors, and block anchors. Inline anchors look wherever that tag is written in a 
-document on a single line, whereas block anchors do the same however it is implied that the tag affects an entire block of code.
-Block anchor tags are inline by default until they are closed with an end anchor tag such as '@anchor:end'. For example, this 
-would still be considered an inline anchor tag:
-
-    
-    @anchor:start:"made some changes here"
-    [[... some code here ...]]
-
-
-Whereas this would not:
-
-
-    @anchor:start:"some targeted block of code"
-    [[... some code here ...]]
-    @anchor:end
-
+document on a single line, whereas block anchors do the same thing except it is implied that the tag affects an entire block of 
+code.
 
 ----------------------------------------------------------------------------------------------------------------------------------
 

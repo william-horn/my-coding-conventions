@@ -24,10 +24,11 @@ There are two types of version numbers. One for program files (formatted as v.0.
 For program files:
     version: a.b.c.d
 
-        a = new user-interactive feature added 
+        a = new major user-interactive feature(s) added 
+        c = compatibility update 
         b = existing features enhanced, removed, modified, or optimized
-        c = major bug fixes 
-        d = minor bug fixes
+        d = bug fixes
+
 
 For non-program files:
     version: a.b
