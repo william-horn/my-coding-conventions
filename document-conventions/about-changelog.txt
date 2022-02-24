@@ -6,7 +6,7 @@
 ? @author:                 William J. Horn
 ? @document-name:          about-changelog.txt
 ? @document-created:       02/19/2022
-? @document-modified:      02/19/2022
+? @document-modified:      02/24/2022
 ? @document-version:       2.1
 
 ----------------------------------------------------------------------------------------------------------------------------------
@@ -20,9 +20,15 @@
 
 -- What Is This? --
 
-This change log system was developed to help keep track of changes made to a program file whether for independent work
-or for collaborative work. The goal was to reduce comment clutter in a program file while still keeping a descriptive log 
-of changes made TO that program file stored away in a different file. 
+This change log system was developed to help keep track of changes made to a program file for independent or collaborative work. 
+The goal was to reduce comment clutter in a program file while still keeping a descriptive log of changes made TO that program 
+file stored away in a different file. There are no new technologies associated with this system, it is simply an organizational 
+tool using folders, txt files with information, and your text editor's search function.
+
+*   This specific system was developed with VSCode's search feature (and others like it) in mind.
+
+*   The intention of this system is not to replace commenting your code, but just to store and link verbose comments within
+    a different file.
 
 
 -- How Do I Use This? --
@@ -50,20 +56,23 @@ Once the files are established you can start making change records. As mentioned
 to the changelog files. However, they follow a specific format. They are instantiated by writing:
 
 
-    @changelog-record:log[<id>.0]
+    @changelog-record:log[id.version]
             -   some description about the change here
 
 
 Here is the above example broken down:
 
 
-    '@changelog-record:log'     - an anchor tag that let's us know we're creating a new change record 
-    '<id>.0'                    - a numeric value that represents the sequential number of change records 
+    '@changelog-record:log'         - an anchor tag that let's us know we're creating a new change record in the changelog txt file
+    'id.version'                    - the numeric id of the change followed by it's version (a sub-change, or modification to a change)
 
 
-Here is an example of how some change records might look within the context of a project:
+Here is an example of how some change records might look within the context of a project. This is what the content inside the 
+changelog files will look like:
 
-
+----------------------------------------------------------------------------------------------------------------------------------
+                                                                                                    | @changelog-date:xx/xx/xxxx |
+                                                                                                    ------------------------------
     @changelog-record:log[1.0]
             -   changed header of website from X to Y 
             -   updated color scheme
@@ -76,36 +85,32 @@ Here is an example of how some change records might look within the context of a
         -   changed footer of website from X to Y
 
 
-All of these change records are grouped and sorted by date. The date is displayed at the far right of the delimiter lines, and 
-looks something like this:
-
-----------------------------------------------------------------------------------------------------------------------------------
-                                                                                                    | @changelog-date:xx/xx/xxxx |
-                                                                                                    ------------------------------
-    @changelog-record:log[id.0]
-            -   did this
-            -   did that 
-
-            @changelog-record:log[id.1]
-                -   did that  
-                -   did this
-
-
-(*optional) OTHER:
+(*optional) ~OTHER:
                 - general change #1
                 - general change #2
 
-(*optional) TODO:
+(*optional) ~TODO:
                 - do this
                 - and that
 
 ----------------------------------------------------------------------------------------------------------------------------------
 
+-- Sort by Date --
+
+All of these change records are grouped and sorted by date. The date is displayed at the far right of the delimiter lines.
 
 Notice that the date is prefixed with the anchor tag '@changelog-date:`, this means you can also search for groups of change
 records by date. You will also notice there is an 'OTHER:' and 'TODO:' list below the change records. These lists are optional 
-and should not be visible by default. They exist to write down a change you made that isn't worth creating a change record for,
-but you would like to remember it anyway. Think of "OTHER" and "TODO" as sticky notes.
+and should not be visible by default. They exist to write down changes you made that aren't worth creating a change record for.
+Think of "OTHER" and "TODO" as sticky notes.
+
+
+-- Nesting Change Records -- 
+
+If you record a change and later make minor adjustments to that change, you can nest changelog records within each other by 
+indenting and writing the new record. This new record's id should stay the same, whereas the second number (the version number)
+should be incremented by one. For example, '@changelog-record:log[1.1]` is written below `@changelog-record:log[1.0]` and is 
+indented.
 
 
 -- Using Change Records in Your Program File --
@@ -115,21 +120,25 @@ the main program file. However, you may also write these change record comments 
 affects a block of code that you want to track. This is optional, but encouraged when refactoring your own code or working with
 other developers.
 
-You can do this by simply adding a closing anchor tag denoted by `@changelog-record:end[<id>]` to end the change record block 
-whenever you need to. For example:
+You can do this enclosing a block of code within the '@changelog-record:start[id]` and '@changelog-record:end[id]' anchor tags
+as a comment. For example:
 
+    ----
+    CODE IN PROGRAM FILE: 
+    ----
 
     var x = 0
 
-    /* @changelog-record:start[1.0] */
+    /* @changelog-record:start[1.0] */          <----
     while (x < 10) {
         x+=2;
     }
-    /* @changelog-record:end[1.0] */
+    /* @changelog-record:end[1.0] */            <----
+
+    ----
 
 
-'@changelog-record:end[1.0]' is where you stop tracking the change record. There are two added benefits to 
-doing this:
+Not every change in a program warrants writing the change record within it, but there are a few benefits to doing so:
 
 
     1.  Searching for change records with your text editor's search function will now also show you where in the program 
@@ -137,11 +146,7 @@ doing this:
     
     2.  While you're in your program file you will be able to see what code you changed without needing to switch
         immediately to your changelog file.
-        
 
-If no end anchor tag is given, you can simply leave the comment as `@changelog-record:start[id.0]` and 
-treat it as an inline anchor tag reference. Usually you may want to do this if you're only changing one line of code, but
-block anchors are still recommended.
 
 That's all for now!
 

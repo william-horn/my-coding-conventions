@@ -22,11 +22,11 @@ Anchor tags are denoted by using the syntax '@anchor`. They are not a plugin, no
 project. These tags are simply just comments that you can leave throughout your program files. 
 
 The primary purpose of these tags is to take advantage of your text editor's search function. Using the search function,
-you can search for a specific tag and quickly locate where some relevant context is within your project. This works best if your 
+you can search for a specific tag and quickly locate where some relevant code is within your project. This works best if your 
 text editor's search function also allows you to search across multiple files, such as VSCode does. Doing this allows you to 
 quickly list all possible points of interest when searching for an anchor tag.
 
-There are two types of anchors: Inline anchors, and block anchors. Inline anchors look wherever that tag is written in a 
+There are two types of anchors: inline anchors, and block anchors. Inline anchors look wherever that tag is written in a 
 document on a single line, whereas block anchors do the same however it is implied that the tag affects an entire block of code.
 Block anchor tags are inline by default until they are closed with an end anchor tag such as '@anchor:end'. For example, this 
 would still be considered an inline anchor tag:
@@ -70,7 +70,7 @@ The typical search tags are as follows, but depending on the purpose of the docu
 
 -- block anchors --
 
-@changelog-record:log[i]                ! Target specifically change logs within the changelog file
+@changelog-record:log[id]               ! Target specifically change logs within the changelog file
 @changelog-record:start[id]             ! Target all starting change record code blocks within a program file
 @changelog-record:end[id]               ! Target all ending instances of a change record block within a program file
 @debug-on:start:"comment"               ! Points to an active debug feature in the program file 
