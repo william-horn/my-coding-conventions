@@ -1,10 +1,10 @@
 ? @document-start
-==============================
-| ABOUT PROGRAM FILE PREFACE |
+==========================
+| ABOUT SOFTWARE PROFILE |
 ==================================================================================================================================
 
 ? @author:                 William J. Horn
-? @document-name:          about-program-file-preface.txt
+? @document-name:          software-profile.txt
 ? @document-created:       02/22/2022
 ? @document-modified:      02/26/2022
 ? @document-version:       N/A
@@ -14,13 +14,13 @@
 ! This is the central updated version
 
 ? @document-about
-=====================================
-| What is The Program File Preface? |
+=================================
+| What is The Software Profile? |
 ==================================================================================================================================
 
-The Program File Preface (PFP) is a comment block at the beginning of every program file that provides significant information
-about said file. All program files, along with those that are not mine but have been refactored or modified by me and do
-NOT already contain a PFP, will include the PFP referenced below. The preface includes the following information headers:
+The software profile is a comment block at the beginning of every program file that provides significant information
+about the file. All program files, along with those that are not mine but have been refactored or modified by me and do
+NOT already contain a software profile, will include the one referenced below. The profile includes the following information:
 
     (*) = optional
 
@@ -83,10 +83,6 @@ comment-begin -->
     ======================
     | DOCUMENT CHANGELOG |
     ==================================================================================================================================
-
-    [Version 0.0.0.0]
-
-        -   changes made
 
     * If this program supports changelog records then there should be a 'changelog' folder within the same directory as this program
     file. Learn more about the changelog system here: 

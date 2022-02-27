@@ -4,7 +4,7 @@
 ==================================================================================================================================
 
 ? @author:                 William J. Horn
-? @document-name:          about-versions.txt
+? @document-name:          version.txt
 ? @document-created:       02/22/2022
 ? @document-modified:      02/26/2022
 ? @document-version:       N/A
@@ -20,7 +20,7 @@
 
 All version numbers (formatted as: v.a.b.c) follow the rule:
 
-    a = major update (significant change in aesthetic, behavior, or concept).
+    a = major update (significant change in aesthetic, behavior, compatibility, concept, or other).
     b = minor update (new minor features or capabilities are introduced)
     c = patch (bug fixes, or reworking of previous subpar behaviors)
 
