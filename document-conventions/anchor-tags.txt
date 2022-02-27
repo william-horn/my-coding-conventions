@@ -13,7 +13,7 @@
 
 ! This is the central updated version
 
-? @document-about
+? @document-info
 =========================
 | What are Anchor Tags? |
 ==================================================================================================================================
@@ -45,7 +45,7 @@ The typical search tags are as follows, but depending on the purpose of the docu
     @document-created                       ? Locate the date the document was created on
     @document-modified                      ? Locate the date the document was last changed
     @document-version                       ? Locate the version of the document according to the author(s)
-    @document-about                         ? Locate verbose information about the document
+    @document-info                          ? Locate verbose information about the document
     @document-api                           ? Locate the API if the document is a library
     @document-changelog                     ? Locate information about the changelog
     @document-todo                          ? Locate the document to-do list

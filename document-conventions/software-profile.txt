@@ -13,7 +13,7 @@
 
 ! This is the central updated version
 
-? @document-about
+? @document-info
 =================================
 | What is The Software Profile? |
 ==================================================================================================================================
@@ -49,19 +49,19 @@ vvvvvvvvvvvv
 
 comment-begin -->
     ? @document-start
-    =======================
-    | ~~DOCUMENT HEADER~~ |
+    ========================
+    | ~~DOCUMENT HEADING~~ |
     ==================================================================================================================================
 
     ? @author:                 William J. Horn
-    ? @document-name:          document-type.extension
+    ? @document-name:          document-name.extension
     ? @document-created:       xx/xx/xxxx
     ? @document-modified:      xx/xx/xxxx
     ? @document-version:       v0.0.0.0
 
     ==================================================================================================================================
 
-    ? @document-about
+    ? @document-info
     ==================
     | ABOUT DOCUMENT |
     ==================================================================================================================================
