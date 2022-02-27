@@ -6,37 +6,25 @@
 ? @author:                 William J. Horn
 ? @document-name:          about-versions.txt
 ? @document-created:       02/22/2022
-? @document-modified:      02/22/2022
+? @document-modified:      02/26/2022
 ? @document-version:       N/A
 
-----------------------------------------------------------------------------------------------------------------------------------
+==================================================================================================================================
 
 ! This is the central updated version
 
 ? @document-about
-=====================================
-| What do The Version Numbers Mean? |
+=================================
+| What do Version Numbers Mean? |
 ==================================================================================================================================
 
-There are two types of version numbers. One for program files (formatted as v.0.0.0.0) and one for non-program files
-(formatted as v.0.0).
+All version numbers (formatted as: v.a.b.c) follow the rule:
 
-For program files:
-    version: a.b.c.d
+    a = major update (significant change in aesthetic, behavior, or concept).
+    b = minor update (new minor features or capabilities are introduced)
+    c = patch (bug fixes, or reworking of previous subpar behaviors)
 
-        a = new major user-interactive feature(s) added 
-        c = compatibility update 
-        b = existing features enhanced, removed, modified, or optimized
-        d = bug fixes
-
-
-For non-program files:
-    version: a.b
-
-        a = change in overall context of the document's purpose
-        b = change/addition/removal of descriptive document text
-
-----------------------------------------------------------------------------------------------------------------------------------
+==================================================================================================================================
 
 ~Will
 ? @document-end

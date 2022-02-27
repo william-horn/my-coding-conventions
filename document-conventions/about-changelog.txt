@@ -6,10 +6,10 @@
 ? @author:                 William J. Horn
 ? @document-name:          about-changelog.txt
 ? @document-created:       02/19/2022
-? @document-modified:      02/24/2022
-? @document-version:       2.1
+? @document-modified:      02/26/2022
+? @document-version:       N/A
 
-----------------------------------------------------------------------------------------------------------------------------------
+==================================================================================================================================
 
 ! This is the central updated version
 
@@ -57,7 +57,7 @@ to the changelog files. However, they follow a specific format. They are instant
 
 
     @changelog-record:log[id.version]
-            -   some description about the change here
+        -   some description about the change here
 
 
 Here is the above example broken down:
@@ -70,10 +70,18 @@ Here is the above example broken down:
 Here is an example of how some change records might look within the context of a project. This is what the content inside the 
 changelog files will look like:
 
-----------------------------------------------------------------------------------------------------------------------------------
-                                                                                                    | @changelog-date:xx/xx/xxxx |
-                                                                                                    ------------------------------
-    @changelog-record:log[1.0]
+======================
+| CHANGE LOG RECORDS |
+==================================================================================================================================
+
+    ============================
+    | @changelog-version:0.0.0 |
+    ============================
+
+        ---------------------------------------------------------------------------------------------------------------------------
+                                                                                                     | @changelog-date:xx/xx/xxxx |
+                                                                                                     ------------------------------
+        @changelog-record:log[1.0]
             -   changed header of website from X to Y 
             -   updated color scheme
 
@@ -81,23 +89,36 @@ changelog files will look like:
                 -   reverted to old color scheme
 
 
-    @changelog-record:log[2.0]
-        -   changed footer of website from X to Y
+        @changelog-record:log[2.0]
+            -   changed footer of website from X to Y
+
+        *OTHER:
+            - general change #1
+            - general change #2
+
+        *TODO:
+            - do this
+            - and that
+
+        ---------------------------------------------------------------------------------------------------------------------------
 
 
-(*optional) ~OTHER:
-                - general change #1
-                - general change #2
+==================================================================================================================================
 
-(*optional) ~TODO:
-                - do this
-                - and that
+-- Sort by Version --
 
-----------------------------------------------------------------------------------------------------------------------------------
+* Added: 02/26/2022
+
+Changelog records are now ALSO sorted by version number of the linked program file. For example, if your program file has 
+updated through versions 1.0.0, 1.0.1, and 1.0.2, the changes made to the program during these versions should be recorded 
+within the changelog file along with the name of the version number they occurred during. Search for '@changelog-version' to 
+list all of the version numbers of your program file along with their respective file edits. 
+
 
 -- Sort by Date --
 
-All of these change records are grouped and sorted by date. The date is displayed at the far right of the delimiter lines.
+All of these change records WITHIN a version category are grouped and sorted by date. The date is displayed at the far right 
+of the delimiter lines.
 
 Notice that the date is prefixed with the anchor tag '@changelog-date:`, this means you can also search for groups of change
 records by date. You will also notice there is an 'OTHER:' and 'TODO:' list below the change records. These lists are optional 
@@ -120,8 +141,9 @@ the main program file. However, you may also write these change record comments 
 affects a block of code that you want to track. This is optional, but encouraged when refactoring your own code or working with
 other developers.
 
-You can do this enclosing a block of code within the '@changelog-record:start[id]` and '@changelog-record:end[id]' anchor tags
+You can do this by enclosing a block of code within the '@changelog-record:start[id]` and '@changelog-record:end[id]' anchor tags
 as a comment. For example:
+
 
     ----
     CODE IN PROGRAM FILE: 
@@ -138,7 +160,7 @@ as a comment. For example:
     ----
 
 
-Not every change in a program warrants writing the change record within it, but there are a few benefits to doing so:
+Not every change in a program file warrants documenting the change record within itself, but there are a few benefits to doing so:
 
 
     1.  Searching for change records with your text editor's search function will now also show you where in the program 
@@ -149,6 +171,8 @@ Not every change in a program warrants writing the change record within it, but 
 
 
 That's all for now!
+
+==================================================================================================================================
 
 ~Will
 ? @document-end
