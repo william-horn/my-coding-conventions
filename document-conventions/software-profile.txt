@@ -57,7 +57,7 @@ comment-begin -->
     ? @document-name:          document-name.extension
     ? @document-created:       xx/xx/xxxx
     ? @document-modified:      xx/xx/xxxx
-    ? @document-version:       v0.0.0.0
+    ? @document-version:       v0.0.0
 
     ==================================================================================================================================
 
