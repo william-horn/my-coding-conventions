@@ -38,7 +38,7 @@ The typical search tags are as follows, but depending on the purpose of the docu
     -- inline anchors --
 
     @author                                 ? Locate author(s) of the document
-    @anchor-help:"anchor"                   ? Locate more information about an anchor tag by searching for it with this tag
+    @anchor-help                            ? Locate more information about an anchor tag by searching for it with this tag
     @document-start                         ? Locate the top of the document
     @document-end                           ? Locate the bottom of the document
     @document-name                          ? Locate the file name of the document
